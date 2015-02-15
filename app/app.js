@@ -2,7 +2,7 @@ var Container = React.createClass({
   render: function() {
     return (
       <div>
-        <Title text={this.props.titleText}/>
+        <Title text="Hello react"/>
       </div>
     );
   }
@@ -11,7 +11,7 @@ var Container = React.createClass({
 var Title = React.createClass({
   getInitialState: function(){
     return {
-      text: 'default title text'
+      text: this.props.text
     }
   },
   render: function() {
