@@ -2,8 +2,8 @@ var Container = React.createClass({
   render: function() {
     return (
       <div>
-        <Title />
-        <SubTitle />
+        <Title text="Hello react"/>
+        <SubTitle text="A library for web components"/>
       </div>
     );
   }
@@ -12,7 +12,7 @@ var Container = React.createClass({
 var Title = React.createClass({
   render: function() {
     return (
-      <h1>Hello React</h1>
+      <h1>{this.props.text}</h1>
     );
   }
 });
@@ -20,7 +20,7 @@ var Title = React.createClass({
 var SubTitle = React.createClass({
   render: function() {
     return (
-      <h3>A library for web components</h3>
+      <h3>{this.props.text}</h3>
     );
   }
 });
