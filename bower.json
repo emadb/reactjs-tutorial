@@ -1,0 +1,21 @@
+{
+  "name": "react-demos",
+  "version": "0.0.1",
+  "authors": [
+    "Emanuele DelBono <emanuele@codiceplastico.com>"
+  ],
+  "description": "Demos for community days",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://ema.codiceplastico.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "react": "~0.12.2"
+  }
+}
