@@ -2,8 +2,8 @@ var Container = React.createClass({
   render: function() {
     return (
       <div>
-        <Title text="Hello react"/>
-        <SubTitle text="A library for web components"/>
+        <Title text={this.props.titleText}/>
+        <SubTitle text={this.props.subtitleText}/>
       </div>
     );
   }
@@ -26,6 +26,6 @@ var SubTitle = React.createClass({
 });
 
 React.render(
-  <Container />,
+  <Container titleText="Hello react" subtitleText="A library for web components"/>,
   document.getElementById('container')
 );
