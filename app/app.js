@@ -1,28 +1,35 @@
 var Container = React.createClass({
   getInitialState: function(){
     return {
-      title: this.props.title,
-      newTitle: 'new title'
+      todos: ['learn javascript', 'write some code'],
+      todo: ''
     }
   },
   handleClick:  function(){
-    this.setState({title: this.state.newTitle});
+    this.state.todos.push(this.state.todo);
+    this.setState({todos: this.state.todos});
+    this.setState({todo: ''});
   },
   handleChange: function(event) {
-    this.setState({newTitle: event.target.value});
+    this.setState({todo: event.target.value});
   },
   render: function() {
+    var items = this.state.todos.map(function(t){
+      return <li>{t}</li>;
+    });
     return (
       <div>
-        <h1>{this.state.title}</h1>
-        <input type="text" value={this.state.newTitle} onChange={this.handleChange}/>
+        <input type="text" value={this.state.todo} onChange={this.handleChange}/>
         <button onClick={this.handleClick}>Change title</button>
+        <ul>
+          {items}
+        </ul>
       </div>
     );
   }
 });
 
 React.render(
-  <Container title='Hello react' />,
+  <Container/>,
   document.getElementById('container')
 );
