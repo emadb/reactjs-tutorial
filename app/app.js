@@ -31,5 +31,5 @@ var Container = React.createClass({
 
 React.render(
   <Container/>,
-  document.getElementById('container')
+  document.body
 );
