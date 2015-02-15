@@ -1,3 +1,14 @@
+var Container = React.createClass({
+  render: function() {
+    return (
+      <div>
+        <Title />
+        <SubTitle />
+      </div>
+    );
+  }
+});
+
 var Title = React.createClass({
   render: function() {
     return (
@@ -6,8 +17,15 @@ var Title = React.createClass({
   }
 });
 
+var SubTitle = React.createClass({
+  render: function() {
+    return (
+      <h3>A library for web components</h3>
+    );
+  }
+});
 
 React.render(
-  <Title />,
+  <Container />,
   document.getElementById('container')
 );
