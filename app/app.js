@@ -1,3 +1,5 @@
+var React = require('react');
+
 var Container = React.createClass({
   getInitialState: function(){
     return {
@@ -15,7 +17,7 @@ var Container = React.createClass({
   },
   render: function() {
     var items = this.state.todos.map(function(t){
-      return <TodoItem text={t} />;
+      return <li>{t}</li>;
     });
     return (
       <div>
@@ -29,13 +31,9 @@ var Container = React.createClass({
   }
 });
 
-var TodoItem = React.createClass({
-  render: function(){
-    return (<li>{this.props.text}</li>);
-  }  
-});
-
 React.render(
   <Container/>,
   document.body
 );
+
+module.exports = Container;
