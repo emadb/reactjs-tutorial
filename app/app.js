@@ -15,7 +15,7 @@ var Container = React.createClass({
   },
   render: function() {
     var items = this.state.todos.map(function(t){
-      return <li>{t}</li>;
+      return <TodoItem text={t} />;
     });
     return (
       <div>
@@ -27,6 +27,12 @@ var Container = React.createClass({
       </div>
     );
   }
+});
+
+var TodoItem = React.createClass({
+  render: function(){
+    return (<li>{this.props.text}</li>);
+  }  
 });
 
 React.render(
