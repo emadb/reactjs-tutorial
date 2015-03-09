@@ -1,27 +1,22 @@
-var Container = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <Title text={this.props.titleText}/>
-      </div>
-    );
-  }
-});
-
-var Title = React.createClass({
+var ClickCounter = React.createClass({
   getInitialState: function(){
-    return {
-      text: 'default title text'
-    }
+    console.log('getInitialState');
+    return {count: 0};
+  },
+  handleClick: function(){
+    console.log('handleClick');
+    this.state.count++;
+    this.setState({count: this.state.count});
   },
   render: function() {
+    console.log('rendering....');
     return (
-      <h1>{this.state.text}</h1>
-    );
-  }
-});
+      <div>
+        <button onClick={this.handleClick}>+</button>
+        <span> {this.state.count} </span>
+      </div>
+      );
+    }
+  });
 
-React.render(
-  <Container />,
-  document.getElementById('container')
-);
+React.render(<ClickCounter/>, document.body);
