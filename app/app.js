@@ -8,6 +8,9 @@ var Container = React.createClass({
   componentDidMount: function(){
     TodoStore.addSubscriber(this.onChange);
   },
+  componentWillUnmount: function () {
+    TodoStore.removeSubscriber(this.onChange);    
+  },
   onChange: function(){
     var todos = TodoStore.getAll();
     this.setState({todos: todos});
@@ -21,7 +24,7 @@ var Container = React.createClass({
   },
   render: function() {
     var items = this.state.todos.map(function(t){
-      return <TodoItem text={t} />;
+      return <TodoItem key={t} text={t} />;
     });
     return (
       <div>
@@ -75,6 +78,10 @@ var TodoStore = {
   },
   addSubscriber: function(callback){
     this._subscribers.push(callback);
+  },
+  removeSubscriber: function(callback){
+    var index = this._subscribers.indexOf(callback);
+    this._subscribers.splice(index, 1);
   }
 };
 
