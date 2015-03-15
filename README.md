@@ -3,6 +3,8 @@ A step-by-step tutorial on [React.js](http://facebook.github.io/react/index.html
 
 ##Use these commits to view the single topic:
 
+- step 8 - flux
+- step 7 - multiple components
 - step 6 - arrays
 - step 5.1 - events
 - step 5 - events
